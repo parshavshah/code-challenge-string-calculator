@@ -38,4 +38,9 @@ describe("StringCalculator Tests", () => {
       "Negative numbers not allowed: -1, -3"
     );
   });
+
+  it("Should return sum if have different delimiters", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("//;1;2;1\n1")).to.equal(5);
+  });
 });
