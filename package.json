@@ -7,10 +7,10 @@
   },
   "version": "1.0.0",
   "description": "A Node.js project using TypeScript, Mocha, and Chai.",
-  "main": "dist/app.js",
+  "main": "dist/src/StringCalculator.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/app.js",
+    "start": "node dist/src/StringCalculator.js",
     "test": "mocha --require ts-node/register test/**/*.spec.ts",
     "lint": "eslint 'src/**/*.ts' 'test/**/*.ts'"
   },
