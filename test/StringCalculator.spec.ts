@@ -48,4 +48,10 @@ describe("StringCalculator Tests", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("//;1;2;2000\n1")).to.equal(4);
   });
+
+  it("Should support multi-character delimiters", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("//[***]\n1***2***3")).to.equal(6);
+    expect(calculator.add("//[###]\n4###5###6")).to.equal(15);
+  });
 });
