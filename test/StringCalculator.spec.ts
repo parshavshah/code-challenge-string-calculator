@@ -17,4 +17,9 @@ describe("StringCalculator Tests", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("1,2")).to.equal(3);
   });
+
+  it("Should return sum for given multiple string number", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("1,2,1,1")).to.equal(5);
+  });
 });
