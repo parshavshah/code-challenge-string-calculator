@@ -7,10 +7,18 @@ export class StringCalculator {
     // replace different delimiters with ","
     if (input.slice(0, 2) === "//") {
       if (input.includes("[") && input.includes("]")) {
-        let delimiterPattern = input.match(/\[([*#]+)\]/);
+        // get all delimiters with following regex
+        let delimiterPattern =
+          input.match(/\[(.*?)\]/g)?.map((d) => d.slice(1, -1)) || [];
+
         if (delimiterPattern) {
-          let delimiter = delimiterPattern[1];
-          input = input.replace(`//${input[2]}`, "").split(delimiter).join(",");
+          // loop multiple delimiters and replacce with traditional ","
+          delimiterPattern.forEach((singleDelimiter) => {
+            input = input
+              .replace(`//${input[2]}`, "")
+              .split(singleDelimiter)
+              .join(",");
+          });
         }
       } else {
         const delimiter = new RegExp(input[2], "g");
