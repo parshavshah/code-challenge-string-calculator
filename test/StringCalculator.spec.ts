@@ -34,8 +34,8 @@ describe("StringCalculator Tests", () => {
 
   it("Should throw an error if have negative number", () => {
     let calculator = new StringCalculator();
-    expect(calculator.add("1\n-2\n1\n1")).to.throw(
-      "Negative number -2 is not allowed"
+    expect(() => calculator.add("-1,2,-3")).to.throw(
+      "Negative numbers not allowed: -1, -3"
     );
   });
 });

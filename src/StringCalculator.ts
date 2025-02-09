@@ -11,6 +11,13 @@ export class StringCalculator {
 
     if (input.includes(",")) {
       const numbers = input.split(",").map((e) => parseInt(e));
+
+      const negative = numbers.filter((e) => e < 0);
+
+      if (negative.length > 0) {
+        throw new Error(`Negative numbers not allowed: ${negative.join(", ")}`);
+      }
+
       return numbers.reduce((a, b) => a + b);
     }
 
