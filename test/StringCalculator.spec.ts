@@ -26,4 +26,16 @@ describe("StringCalculator Tests", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("1\n2\n1\n1")).to.equal(5);
   });
+
+  it("Should return sum if delimiter is new line", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("1\n2\n1\n1")).to.equal(5);
+  });
+
+  it("Should throw an error if have negative number", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("1\n-2\n1\n1")).to.throw(
+      "Negative number -2 is not allowed"
+    );
+  });
 });
