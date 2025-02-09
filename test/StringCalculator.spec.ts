@@ -2,7 +2,6 @@ import { expect } from "chai";
 import { StringCalculator } from "../src/StringCalculator";
 
 describe("StringCalculator Tests", () => {
-  
   it("Should return 0 for empty string", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("")).to.equal(0);
@@ -21,5 +20,10 @@ describe("StringCalculator Tests", () => {
   it("Should return sum for given multiple string number", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("1,2,1,1")).to.equal(5);
+  });
+
+  it("Should return sum if delimiter is new line", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("1\n2\n1\n1")).to.equal(5);
   });
 });
