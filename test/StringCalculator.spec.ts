@@ -12,4 +12,9 @@ describe("StringCalculator Tests", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("1")).to.equal(1);
   });
+
+  it("Should return sum for given two string number", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("1,2")).to.equal(3);
+  });
 });
