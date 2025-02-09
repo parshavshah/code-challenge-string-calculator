@@ -6,8 +6,16 @@ export class StringCalculator {
 
     // replace different delimiters with ","
     if (input.slice(0, 2) === "//") {
-      const delimiter = new RegExp(input[2], "g");
-      input = input.replace(`//${input[2]}`, "").split(delimiter).join(",");
+      if (input.includes("[") && input.includes("]")) {
+        let delimiterPattern = input.match(/\[([*#]+)\]/);
+        if (delimiterPattern) {
+          let delimiter = delimiterPattern[1];
+          input = input.replace(`//${input[2]}`, "").split(delimiter).join(",");
+        }
+      } else {
+        const delimiter = new RegExp(input[2], "g");
+        input = input.replace(`//${input[2]}`, "").split(delimiter).join(",");
+      }
     }
 
     // replace new line with comma
