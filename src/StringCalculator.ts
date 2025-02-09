@@ -16,7 +16,10 @@ export class StringCalculator {
     }
 
     if (input.includes(",")) {
-      const numbers = input.split(",").map((e) => parseInt(e));
+      const numbers = input
+        .split(",")
+        .map((e) => parseInt(e))
+        .filter((e) => e < 1000); // ignore the numbers greater than 1000
 
       const negative = numbers.filter((e) => e < 0);
 
