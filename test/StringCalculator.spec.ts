@@ -7,4 +7,9 @@ describe("StringCalculator Tests", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("")).to.equal(0);
   });
+
+  it("Should return number for given string number", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("1")).to.equal(1);
+  });
 });
