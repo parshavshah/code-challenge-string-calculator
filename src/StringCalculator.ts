@@ -4,6 +4,12 @@ export class StringCalculator {
       return 0;
     }
 
+    // replace different delimiters with ","
+    if (input.slice(0, 2) === "//") {
+      const delimiter = new RegExp(input[2], "g");
+      input = input.replace(`//${input[2]}`, "").split(delimiter).join(",");
+    }
+
     // replace new line with comma
     if (input.includes("\n")) {
       input = input.split("\n").join(",");
