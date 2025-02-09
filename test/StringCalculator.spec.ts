@@ -43,4 +43,9 @@ describe("StringCalculator Tests", () => {
     let calculator = new StringCalculator();
     expect(calculator.add("//;1;2;1\n1")).to.equal(5);
   });
+
+  it("Should ignore numbers greater than 1000", () => {
+    let calculator = new StringCalculator();
+    expect(calculator.add("//;1;2;2000\n1")).to.equal(4);
+  });
 });
